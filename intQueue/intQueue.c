@@ -60,6 +60,24 @@ void funcintQueueEnqueue (intQueue *pQueue, int value)
     }
 }
 
+void funcintQueueDequeue (intQueue *pQueue, int *pvalue)
+{
+    intDNode *vpTemp;
+
+    if ( pQueue->H==pQueue->T )
+    {
+        funcintDNodeFree (pQueue->H);
+        pQueue->H = NULL;
+        pQueue->T = NULL;
+    }
+    else
+    {
+        vpTemp = pQueue->H;
+
+        pQueue->H = pQueue->H->Next;
+        funcintDNodeFree (vpTemp);
+    }
+}
 
 bool funcintQueueEmpty (intQueue Queue)
 {
