@@ -80,16 +80,28 @@ void funcintQueueDequeue (intQueue *pQueue, int *pholder)
     }
 }
 
-void funcintQueueFront (intQueue *pQueue, int *pholder)
+void funcintQueueFront (intQueue Queue, int *pholder)
 {
 
-    if ( pQueue->H==NULL )
+    if ( Queue.H==NULL )
     {
         printf ("the queue is empty !");
         exit (1);
     }
 
-    (*pholder) = pQueue->H->Value;
+    (*pholder) = (Queue.H)->Value;
+}
+
+void funcintQueueBack (intQueue Queue, int *pholder)
+{
+
+    if ( Queue.H==NULL )
+    {
+        printf ("the queue is empty !");
+        exit (1);
+    }
+
+    (*pholder) = (Queue.T)->Value;
 }
 
 bool funcintQueueEmpty (intQueue Queue)
