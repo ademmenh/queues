@@ -60,7 +60,7 @@ void funcintQueueEnqueue (intQueue *pQueue, int value)
     }
 }
 
-void funcintQueueDequeue (intQueue *pQueue, int *pvalue)
+void funcintQueueDequeue (intQueue *pQueue, int *pholder)
 {
     intDNode *vpTemp;
 
@@ -73,10 +73,23 @@ void funcintQueueDequeue (intQueue *pQueue, int *pvalue)
     else
     {
         vpTemp = pQueue->H;
-
         pQueue->H = pQueue->H->Next;
+
+        (*pholder) = vpTemp->Value;
         funcintDNodeFree (vpTemp);
     }
+}
+
+void funcintQueueFront (intQueue *pQueue, int *pholder)
+{
+
+    if ( pQueue->H==NULL )
+    {
+        printf ("the queue is empty !");
+        exit (1);
+    }
+
+    (*pholder) = pQueue->H->Value;
 }
 
 bool funcintQueueEmpty (intQueue Queue)
