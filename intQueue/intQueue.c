@@ -31,3 +31,24 @@ typedef struct intQueue
 
 
 
+
+void funcintQueueInit (intQueue *pQueue)
+{
+    pQueue->H = NULL;
+    pQueue->T = NULL;
+}
+
+
+bool funcintQueueEmpty (intQueue Queue)
+{
+    if ( Queue.H==NULL )       // Queue.H==NULL && Queue.T==NULL
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+
