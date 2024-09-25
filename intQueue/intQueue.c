@@ -117,3 +117,39 @@ bool funcintQueueEmpty (intQueue Queue)
 }
 
 
+
+void funcintQueueCreate (intQueue *pQueue, int stackSize)
+{
+
+    int viInput;
+    int viCn;
+    for ( viCn=0; viCn<stackSize; viCn++ )
+    {
+        viInput = funcintInput();
+        funcintQueueEnqueue (pQueue, viInput);
+    }
+}
+
+void funcintQueueDisplay (intQueue Queue)
+{
+    intDNode *vpCn;
+    int viCn;
+
+
+    if ( funcintQueueEmpty(Queue) )
+    {
+        printf ("The List is Empty!");
+        return;
+    }
+
+
+    vpCn = Queue.H;
+    viCn = 0;
+    while ( vpCn!=NULL )
+    {
+        printf ("The value n %d is: %d.\n", viCn, vpCn->Value);
+        viCn++;
+        vpCn = vpCn->Next;
+    }
+
+}
