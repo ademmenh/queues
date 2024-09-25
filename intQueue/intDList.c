@@ -961,35 +961,35 @@ void funcintDListDisplayReversed (intDList DList)
 
 
 
-int main ()
-{
+// int main ()
+// {
 
-    intDList vdlList1, vdlList2, vdlList3;
-    funcintDListInit (&vdlList1);
-    funcintDListInit (&vdlList2);
-    funcintDListInit (&vdlList3);
+//     intDList vdlList1, vdlList2, vdlList3;
+//     funcintDListInit (&vdlList1);
+//     funcintDListInit (&vdlList2);
+//     funcintDListInit (&vdlList3);
 
-    printf ("creating list1:\n");
-    funcintDListCreateFIFO (&vdlList1, 5);
-    printf ("\n\n");
+//     printf ("creating list1:\n");
+//     funcintDListCreateFIFO (&vdlList1, 5);
+//     printf ("\n\n");
 
-    printf ("Displaying list:\n");
-    funcintDListDisplay (vdlList1);
-    printf ("\n\n");
+//     printf ("Displaying list:\n");
+//     funcintDListDisplay (vdlList1);
+//     printf ("\n\n");
 
-    printf ("create list2:\n");
-    funcintDListCreateFIFO (&vdlList2, 5);
-    printf ("\n\n");
+//     printf ("create list2:\n");
+//     funcintDListCreateFIFO (&vdlList2, 5);
+//     printf ("\n\n");
 
-    printf ("Displaying list:\n");
-    funcintDListDisplay (vdlList2);
-    printf ("\n\n");
+//     printf ("Displaying list:\n");
+//     funcintDListDisplay (vdlList2);
+//     printf ("\n\n");
 
 
 
-    vdlList3 = funcintDListSymmetricDifference (vdlList1, vdlList2);
-    printf ("Displaying list:\n");
-    funcintDListDisplay (vdlList3);
-    printf ("\n\n");
-    return 0;
-}
+//     vdlList3 = funcintDListSymmetricDifference (vdlList1, vdlList2);
+//     printf ("Displaying list:\n");
+//     funcintDListDisplay (vdlList3);
+//     printf ("\n\n");
+//     return 0;
+// }

@@ -38,6 +38,28 @@ void funcintQueueInit (intQueue *pQueue)
     pQueue->T = NULL;
 }
 
+void funcintQueueEnqueue (intQueue *pQueue, int value)
+{
+    
+    intDNode *vpNew, *vpTemp;
+
+    if ( pQueue->H==NULL )
+    {
+        vpNew = funcintDNodeCreate (value);
+        pQueue->H = vpNew;
+        pQueue->T = vpNew;
+    }
+    else
+    {
+        vpTemp = pQueue->T;
+        pQueue->T = funcintDNodeCreate (value);
+
+        pQueue->T->Previous = vpTemp;
+        vpTemp->Next = pQueue->T;
+
+    }
+}
+
 
 bool funcintQueueEmpty (intQueue Queue)
 {
