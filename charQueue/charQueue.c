@@ -38,7 +38,6 @@ void funccharQueueInit (charQueue *pQueue)
     pQueue->T = NULL;
 }
 
-
 void funccharQueueEnqueue (charQueue *pQueue, int value)
 {
     
@@ -58,6 +57,26 @@ void funccharQueueEnqueue (charQueue *pQueue, int value)
         pQueue->T->Previous = vpTemp;
         vpTemp->Next = pQueue->T;
 
+    }
+}
+
+void funccharQueueDequeue (charQueue *pQueue, int *pholder)
+{
+    charDNode *vpTemp;
+
+    if ( pQueue->H==pQueue->T )
+    {
+        funccharDNodeFree (pQueue->H);
+        pQueue->H = NULL;
+        pQueue->T = NULL;
+    }
+    else
+    {
+        vpTemp = pQueue->H;
+        pQueue->H = pQueue->H->Next;
+
+        (*pholder) = vpTemp->Value;
+        funccharDNodeFree (vpTemp);
     }
 }
 
