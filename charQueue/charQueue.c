@@ -39,6 +39,28 @@ void funccharQueueInit (charQueue *pQueue)
 }
 
 
+void funccharQueueEnqueue (charQueue *pQueue, int value)
+{
+    
+    charDNode *vpNew, *vpTemp;
+
+    if ( pQueue->H==NULL )
+    {
+        vpNew = funccharDNodeCreate (value);
+        pQueue->H = vpNew;
+        pQueue->T = vpNew;
+    }
+    else
+    {
+        vpTemp = pQueue->T;
+        pQueue->T = funccharDNodeCreate (value);
+
+        pQueue->T->Previous = vpTemp;
+        vpTemp->Next = pQueue->T;
+
+    }
+}
+
 bool funccharQueueEmpty (charQueue Queue)
 {
     if ( Queue.H==NULL )       // Queue.H==NULL && Queue.T==NULL
