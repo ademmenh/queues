@@ -30,3 +30,23 @@ typedef struct charQueue
 } charQueue;
 
 
+
+
+void funccharQueueInit (charQueue *pQueue)
+{
+    pQueue->H = NULL;
+    pQueue->T = NULL;
+}
+
+
+bool funccharQueueEmpty (charQueue Queue)
+{
+    if ( Queue.H==NULL )       // Queue.H==NULL && Queue.T==NULL
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
