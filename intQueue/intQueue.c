@@ -15,7 +15,7 @@
     #include <stdlib.h>
 #endif
 
-#ifndef _intDLIT_C
+#ifndef _intDLIST_C
     #include "intDList.c"
 #endif
 
