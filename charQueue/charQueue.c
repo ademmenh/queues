@@ -104,7 +104,6 @@ void funccharQueueBack (charQueue Queue, int *pholder)
     (*pholder) = (Queue.T)->Value;
 }
 
-
 bool funccharQueueEmpty (charQueue Queue)
 {
     if ( Queue.H==NULL )       // Queue.H==NULL && Queue.T==NULL
@@ -114,5 +113,18 @@ bool funccharQueueEmpty (charQueue Queue)
     else
     {
         return false;
+    }
+}
+
+
+void funccharQueueCreate (charQueue *pQueue, int stackSize)
+{
+
+    int viInput;
+    int viCn;
+    for ( viCn=0; viCn<stackSize; viCn++ )
+    {
+        viInput = funccharInput();
+        funccharQueueEnqueue (pQueue, viInput);
     }
 }
