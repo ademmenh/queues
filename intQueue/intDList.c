@@ -774,7 +774,7 @@ intDList funcintDListSymmetricDifference (intDList DList1, intDList DList2)
 
 
 
-int funcQuerryInt ()
+int funcintInput ()
 {
 
     int viNum1;
@@ -791,7 +791,7 @@ void funcintDListCreateFIFO (intDList *pDList, int DListSize)
     int viCn;
     for ( viCn=0; viCn<DListSize; viCn++ )
     {
-        viValue = funcQuerryInt ();
+        viValue = funcintInput();
         funcintDListInsertEnd (pDList, viValue); // &(*pDList)
     }
 }
@@ -803,7 +803,7 @@ void funcintDListCreateLIFO (intDList *pDList, int DListSize)
     int viCn;
     for ( viCn=0; viCn<DListSize; viCn++)
     {
-        viValue = funcQuerryInt ();
+        viValue = funcintInput();
         funcintDListInsertBegin (pDList, viValue);   // &(*pDList)
     }
 }
