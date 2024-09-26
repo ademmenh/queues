@@ -120,11 +120,35 @@ bool funccharQueueEmpty (charQueue Queue)
 void funccharQueueCreate (charQueue *pQueue, int stackSize)
 {
 
-    int viInput;
+    int vcInput;
     int viCn;
     for ( viCn=0; viCn<stackSize; viCn++ )
     {
-        viInput = funccharInput();
-        funccharQueueEnqueue (pQueue, viInput);
+        vcInput = funccharInput();
+        funccharQueueEnqueue (pQueue, vcInput);
     }
+}
+
+void funccharQueueDisplay (charQueue Queue)
+{
+    charDNode *vpCn;
+    int viCn;
+
+
+    if ( funccharQueueEmpty(Queue) )
+    {
+        printf ("The Queue is Empty!");
+        return;
+    }
+
+
+    vpCn = Queue.H;
+    viCn = 0;
+    while ( vpCn!=NULL )
+    {
+        printf ("The value n %d is: %c.\n", viCn, vpCn->Value);
+        viCn++;
+        vpCn = vpCn->Next;
+    }
+
 }
