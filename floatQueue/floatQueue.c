@@ -83,6 +83,30 @@ void funcfloatQueueDequeue (floatQueue *pQueue, float *pholder)
     }
 }
 
+void funcfloatQueueFront (floatQueue Queue, float *pholder)
+{
+
+    if ( Queue.H==NULL )
+    {
+        printf ("the queue is empty !");
+        exit (1);
+    }
+
+    (*pholder) = (Queue.H)->Value;
+}
+
+void funcfloatQueueBack (floatQueue Queue, float *pholder)
+{
+
+    if ( Queue.H==NULL )
+    {
+        printf ("the queue is empty !");
+        exit (1);
+    }
+
+    (*pholder) = (Queue.T)->Value;
+}
+
 bool funcfloatQueueEmpty (floatQueue Queue)
 {
     if ( Queue.H==NULL )       // Queue.H==NULL && Queue.T==NULL
