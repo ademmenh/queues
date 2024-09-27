@@ -33,3 +33,21 @@ typedef struct stringQueue
 
 
 
+
+void funcstringQueueInit (stringQueue *pQueue)
+{
+    pQueue->H = NULL;
+    pQueue->T = NULL;
+}
+
+bool funcstringQueueEmpty (stringQueue Queue)
+{
+    if ( Queue.H==NULL )       // Queue.H==NULL && Queue.T==NULL
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
