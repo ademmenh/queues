@@ -38,7 +38,7 @@ void funccharQueueInit (charQueue *pQueue)
     pQueue->T = NULL;
 }
 
-void funccharQueueEnqueue (charQueue *pQueue, int value)
+void funccharQueueEnqueue (charQueue *pQueue, char value)
 {
     
     charDNode *vpNew, *vpTemp;
@@ -60,7 +60,7 @@ void funccharQueueEnqueue (charQueue *pQueue, int value)
     }
 }
 
-void funccharQueueDequeue (charQueue *pQueue, int *pholder)
+void funccharQueueDequeue (charQueue *pQueue, char *pholder)
 {
     charDNode *vpTemp;
 
@@ -80,7 +80,7 @@ void funccharQueueDequeue (charQueue *pQueue, int *pholder)
     }
 }
 
-void funccharQueueFront (charQueue Queue, int *pholder)
+void funccharQueueFront (charQueue Queue, char *pholder)
 {
 
     if ( Queue.H==NULL )
@@ -92,7 +92,7 @@ void funccharQueueFront (charQueue Queue, int *pholder)
     (*pholder) = (Queue.H)->Value;
 }
 
-void funccharQueueBack (charQueue Queue, int *pholder)
+void funccharQueueBack (charQueue Queue, char *pholder)
 {
 
     if ( Queue.H==NULL )

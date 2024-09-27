@@ -41,6 +41,47 @@ void funcfloatQueueInit (floatQueue *pQueue)
     pQueue->T = NULL;
 }
 
+void funcfloatQueueEnqueue (floatQueue *pQueue, float value)
+{
+    
+    floatDNode *vpNew, *vpTemp;
+
+    if ( pQueue->H==NULL )
+    {
+        vpNew = funcfloatDNodeCreate (value);
+        pQueue->H = vpNew;
+        pQueue->T = vpNew;
+    }
+    else
+    {
+        vpTemp = pQueue->T;
+        pQueue->T = funcfloatDNodeCreate (value);
+
+        pQueue->T->Previous = vpTemp;
+        vpTemp->Next = pQueue->T;
+
+    }
+}
+
+void funcfloatQueueDequeue (floatQueue *pQueue, float *pholder)
+{
+    floatDNode *vpTemp;
+
+    if ( pQueue->H==pQueue->T )
+    {
+        funcfloatDNodeFree (pQueue->H);
+        pQueue->H = NULL;
+        pQueue->T = NULL;
+    }
+    else
+    {
+        vpTemp = pQueue->H;
+        pQueue->H = pQueue->H->Next;
+
+        (*pholder) = vpTemp->Value;
+        funcfloatDNodeFree (vpTemp);
+    }
+}
 
 bool funcfloatQueueEmpty (floatQueue Queue)
 {
