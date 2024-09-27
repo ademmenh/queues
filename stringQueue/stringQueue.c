@@ -82,6 +82,32 @@ void funcstringQueueDequeue (stringQueue *pQueue, string *pholder)
     }
 }
 
+
+void funcstringQueueFront (stringQueue Queue, string *pholder)
+{
+
+    if ( Queue.H==NULL )
+    {
+        printf ("the queue is empty !");
+        exit (1);
+    }
+
+    (*pholder) = (Queue.H)->Value;
+}
+
+void funcstringQueueBack (stringQueue Queue, string *pholder)
+{
+
+    if ( Queue.H==NULL )
+    {
+        printf ("the queue is empty !");
+        exit (1);
+    }
+
+    (*pholder) = (Queue.T)->Value;
+}
+
+
 bool funcstringQueueEmpty (stringQueue Queue)
 {
     if ( Queue.H==NULL )       // Queue.H==NULL && Queue.T==NULL
