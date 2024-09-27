@@ -119,3 +119,41 @@ bool funcfloatQueueEmpty (floatQueue Queue)
     }
 }
 
+
+
+
+void funcfloatQueueCreate (floatQueue *pQueue, int stackSize)
+{
+
+    int vfInput;
+    int viCn;
+    for ( viCn=0; viCn<stackSize; viCn++ )
+    {
+        vfInput = funcfloatInput();
+        funcfloatQueueEnqueue (pQueue, vfInput);
+    }
+}
+
+void funcfloatQueueDisplay (floatQueue Queue)
+{
+    floatDNode *vpCn;
+    int viCn;
+
+
+    if ( funcfloatQueueEmpty(Queue) )
+    {
+        printf ("The Queue is Empty!");
+        return;
+    }
+
+
+    vpCn = Queue.H;
+    viCn = 0;
+    while ( vpCn!=NULL )
+    {
+        printf ("The value n %d is: %c.\n", viCn, vpCn->Value);
+        viCn++;
+        vpCn = vpCn->Next;
+    }
+
+}
