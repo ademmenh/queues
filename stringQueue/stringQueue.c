@@ -40,6 +40,48 @@ void funcstringQueueInit (stringQueue *pQueue)
     pQueue->T = NULL;
 }
 
+void funcstringQueueEnqueue (stringQueue *pQueue, string value)
+{
+    
+    stringDNode *vpNew, *vpTemp;
+
+    if ( pQueue->H==NULL )
+    {
+        vpNew = funcstringDNodeCreate (value);
+        pQueue->H = vpNew;
+        pQueue->T = vpNew;
+    }
+    else
+    {
+        vpTemp = pQueue->T;
+        pQueue->T = funcstringDNodeCreate (value);
+
+        pQueue->T->Previous = vpTemp;
+        vpTemp->Next = pQueue->T;
+
+    }
+}
+
+void funcstringQueueDequeue (stringQueue *pQueue, string *pholder)
+{
+    stringDNode *vpTemp;
+
+    if ( pQueue->H==pQueue->T )
+    {
+        funcstringDNodeFree (pQueue->H);
+        pQueue->H = NULL;
+        pQueue->T = NULL;
+    }
+    else
+    {
+        vpTemp = pQueue->H;
+        pQueue->H = pQueue->H->Next;
+
+        (*pholder) = vpTemp->Value;
+        funcstringDNodeFree (vpTemp);
+    }
+}
+
 bool funcstringQueueEmpty (stringQueue Queue)
 {
     if ( Queue.H==NULL )       // Queue.H==NULL && Queue.T==NULL
