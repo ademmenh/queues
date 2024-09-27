@@ -30,3 +30,27 @@ typedef struct floatQueue
     floatDNode *T;
 } floatQueue;
 
+
+
+
+
+
+void funcfloatQueueInit (floatQueue *pQueue)
+{
+    pQueue->H = NULL;
+    pQueue->T = NULL;
+}
+
+
+bool funcfloatQueueEmpty (floatQueue Queue)
+{
+    if ( Queue.H==NULL )       // Queue.H==NULL && Queue.T==NULL
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
