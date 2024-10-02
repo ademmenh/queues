@@ -1,8 +1,5 @@
 
-
-#ifndef _floatQUEUE_C
-    #define _floatQUEUE_C
-#endif
+#define _floatQUEUE_C
 
 #ifndef _STDBOOL_H
     #include <stdbool.h>

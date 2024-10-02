@@ -1,7 +1,5 @@
 
-#ifndef _charDLIST_C
-    #define _charDLIST_C
-#endif
+#define _charDLIST_C
 
 #ifndef _STDBOOL_H
     #include <stdbool.h>
@@ -760,20 +758,21 @@ charDList funccharDListSymmetricDifference (charDList DList1, charDList DList2)
 }
 
 
+#ifndef _func_CHARINPUT
+    char funccharInput ()
+    {
 
-char funcQuerrychar ()
-{
+        char vcChar, vcBuffer;
 
-    char vcChar, vcBuffer;
+        printf ("Enter the value: ");
+        vcChar = getchar(); // fgetc (stdin)
+        vcBuffer = vcChar;
+        while (vcBuffer!='\n')
+        {vcBuffer = getchar();}
 
-    printf ("Enter the value: ");
-    vcChar = getchar(); // fgetc (stdin)
-    vcBuffer = vcChar;
-    while (vcBuffer!='\n')
-    {vcBuffer = getchar();}
-
-    return vcChar;
-}
+        return vcChar;
+    }
+#endif
 
 void funccharDListCreateFIFO (charDList *pDList, int DListSize)
 {
@@ -782,7 +781,7 @@ void funccharDListCreateFIFO (charDList *pDList, int DListSize)
     int viCn;
     for ( viCn=0; viCn<DListSize; viCn++ )
     {
-        vcValue = funcQuerrychar ();
+        vcValue = funccharInput ();
         funccharDListInsertEnd (pDList, vcValue); // &(*pDList)
     }
 }
@@ -794,7 +793,7 @@ void funccharDListCreateLIFO (charDList *pDList, int DListSize)
     int viCn;
     for ( viCn=0; viCn<DListSize; viCn++)
     {
-        vcValue = funcQuerrychar ();
+        vcValue = funccharInput ();
         funccharDListInsertBegin (pDList, vcValue);   // &(*pDList)
     }
 }
@@ -890,39 +889,3 @@ void funccharDListDisplayReversed (charDList DList)
 
 }
 */
-
-
-int main ()
-{
-    charDList vdlList1, vdlList2, vdlList3;
-    funccharDListInit (&vdlList1);
-    funccharDListInit (&vdlList2);
-    funccharDListInit (&vdlList3);
-
-    printf ("creating list1:\n");
-    funccharDListCreateFIFO (&vdlList1, 5);
-    printf ("\n\n");
-
-    printf ("Displaying list:\n");
-    funccharDListDisplay (vdlList1);
-    printf ("\n\n");
-
-    printf ("create list2:\n");
-    funccharDListCreateFIFO (&vdlList2, 5);
-    printf ("\n\n");
-
-    printf ("Displaying list:\n");
-    funccharDListDisplay (vdlList2);
-    printf ("\n\n");
-
-
-
-    vdlList3 = funccharDListSymmetricDifference (vdlList1, vdlList2);
-    printf ("Displaying list:\n");
-    funccharDListDisplay (vdlList3);
-    printf ("\n\n");
-
-
-
-    return 0;
-}

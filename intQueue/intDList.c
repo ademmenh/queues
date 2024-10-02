@@ -1,7 +1,5 @@
 
-#ifndef _intDLIST_C
-    #define _intDLIST_C
-#endif
+#define _intDLIST_C
 
 #ifndef _STDBOOL_H
     #include <stdbool.h>
@@ -14,6 +12,7 @@
 #ifndef _STDLIB_H
     #include <stdlib.h>
 #endif
+
 
 
 
@@ -773,16 +772,17 @@ intDList funcintDListSymmetricDifference (intDList DList1, intDList DList2)
 }
 
 
+#ifndef _func_INTINPUT
+    int funcintInput ()
+    {
 
-int funcintInput ()
-{
+        int viNum1;
+        printf ("Enter the value: ");
+        scanf ("%d", &viNum1);
 
-    int viNum1;
-    printf ("Enter the value: ");
-    scanf ("%d", &viNum1);
-
-    return viNum1;
-}
+        return viNum1;
+    }
+#endif
 
 void funcintDListCreateFIFO (intDList *pDList, int DListSize)
 {
@@ -865,6 +865,7 @@ void funcintDListSortReversed (intDList *pDList)
         vpCn1 = vpCn1->Previous;
     }
 }
+
 
 
 void funcintDListDisplay (intDList DList)
@@ -958,38 +959,3 @@ void funcintDListDisplayReversed (intDList DList)
 
 }
 */
-
-
-
-// int main ()
-// {
-
-//     intDList vdlList1, vdlList2, vdlList3;
-//     funcintDListInit (&vdlList1);
-//     funcintDListInit (&vdlList2);
-//     funcintDListInit (&vdlList3);
-
-//     printf ("creating list1:\n");
-//     funcintDListCreateFIFO (&vdlList1, 5);
-//     printf ("\n\n");
-
-//     printf ("Displaying list:\n");
-//     funcintDListDisplay (vdlList1);
-//     printf ("\n\n");
-
-//     printf ("create list2:\n");
-//     funcintDListCreateFIFO (&vdlList2, 5);
-//     printf ("\n\n");
-
-//     printf ("Displaying list:\n");
-//     funcintDListDisplay (vdlList2);
-//     printf ("\n\n");
-
-
-
-//     vdlList3 = funcintDListSymmetricDifference (vdlList1, vdlList2);
-//     printf ("Displaying list:\n");
-//     funcintDListDisplay (vdlList3);
-//     printf ("\n\n");
-//     return 0;
-// }

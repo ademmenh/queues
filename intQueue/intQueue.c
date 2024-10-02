@@ -1,7 +1,5 @@
 
-#ifndef _intQUEUE_C
-    #define _intQUEUE_C
-#endif
+#define _intQUEUE_C
 
 #ifndef _STDBOOL_H
     #include <stdbool.h>
@@ -153,19 +151,3 @@ void funcintQueueDisplay (intQueue Queue)
     }
 
 }
-
-
-// int main ()
-// {
-//     intQueue vqIntigers;
-//     funcintQueueInit (&vqIntigers);
-
-//     funcintQueueCreate(&vqIntigers, 5);
-//     funcintQueueDisplay (vqIntigers);
-//     int holder;
-//     funcintQueueBack(vqIntigers, &holder);
-//     printf ("%d", holder);
-//     funcintQueueFront (vqIntigers, &holder);
-//     printf ("%d", holder);
-//     return 0;
-// }

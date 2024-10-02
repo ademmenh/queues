@@ -1,7 +1,5 @@
 
-#ifndef _stringQUEUE_C
-    #define _stringQUEUE_C
-#endif
+#define _stringQUEUE_C
 
 #ifndef _STDBOOL_H
     #include <stdbool.h>
@@ -157,4 +155,3 @@ void funcstringQueueDisplay (stringQueue Queue)
         vpCn = vpCn->Next;
     }
 }
-

@@ -1,7 +1,5 @@
 
-#ifndef _charQUEUE_C
-    #define _charQUEUE_C
-#endif
+#define _charQUEUE_C
 
 #ifndef _STDBOOL_H
     #include <stdbool.h>
